@@ -7,14 +7,13 @@
 
 import UIKit
 
-class FirstVC: UIViewController {
+class MainViewController: UIViewController {
 
-    @IBOutlet weak var superView: UIView!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     @IBAction func changeBGAction() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "ColorViewController") as? ColorViewController else {return}
+        navigationController?.pushViewController(vc, animated: true)
+        vc.delegate = self
+        vc.viewColor = view.backgroundColor
     }
 }
