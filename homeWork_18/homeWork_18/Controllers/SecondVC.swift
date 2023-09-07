@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ColorViewController: UIViewController, UITextFieldDelegate {
+class ColorViewController: UIViewController {
     
     @IBOutlet var RGBView: UIView!
     @IBOutlet var redSlider: UISlider!

@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension ColorViewController {
+extension ColorViewController: UITextFieldDelegate  {
     
     func setColor() {
         RGBView.backgroundColor = UIColor(
