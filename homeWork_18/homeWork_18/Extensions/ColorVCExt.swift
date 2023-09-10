@@ -14,7 +14,7 @@ extension ColorViewController: UITextFieldDelegate  {
             red: CGFloat(redSlider.value / 255.0),
             green: CGFloat(greenSlider.value / 255.0),
             blue: CGFloat(blueSlider.value / 255.0),
-            alpha: 1
+            alpha: CGFloat(opacitySlider.value / 100)
         )
     }
     
@@ -25,19 +25,20 @@ extension ColorViewController: UITextFieldDelegate  {
                 redTextField.text = String(Int(redSlider.value))
             case greenTextField:
                 greenTextField.text = String(Int(greenSlider.value))
+            case opacityTF:
+                opacityTF.text = String(Int(opacitySlider.value))
             default:
                 blueTextField.text = String(Int(blueSlider.value))
             }
         }
-       errorLbl.isHidden = true
-       saveBtn.isEnabled = true
     }
     
     func setSliders() {
         let ciColor = CIColor(color: viewColor)
-        redSlider.value = Float(ciColor.red * 255.0)
-        greenSlider.value = Float(ciColor.green * 255.0)
-        blueSlider.value = Float(ciColor.blue * 255.0)
+        redSlider.value = Float(ciColor.red * 255)
+        greenSlider.value = Float(ciColor.green * 255)
+        blueSlider.value = Float(ciColor.blue * 255)
+        opacitySlider.value = Float(ciColor.alpha * 100)
     }
 }
 
@@ -52,19 +53,13 @@ extension ColorViewController {
         guard let text = textField.text,
               let currentValue = Float(text)
         else { return }
-        if currentValue >= 0, currentValue <= 255 {
-            switch textField {
-            case redTextField: redSlider.setValue(currentValue, animated: true)
-            case greenTextField: greenSlider.setValue(currentValue, animated: true)
-            default: blueSlider.setValue(currentValue, animated: true)
-            }
-            setColor()
-            errorLbl.isHidden = true
-            saveBtn.isEnabled = true
-        } else {
-            errorLbl.isHidden = false
-            saveBtn.isEnabled = false
+        switch textField {
+        case redTextField: redSlider.setValue(currentValue, animated: true)
+        case greenTextField: greenSlider.setValue(currentValue, animated: true)
+        case opacityTF: opacitySlider.setValue(currentValue, animated: true)
+        default: blueSlider.setValue(currentValue, animated: true)
         }
+        setColor()
     }
 }
 

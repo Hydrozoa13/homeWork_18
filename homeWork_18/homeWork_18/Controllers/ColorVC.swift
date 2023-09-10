@@ -17,7 +17,8 @@ class ColorViewController: UIViewController {
     @IBOutlet weak var greenTextField: UITextField!
     @IBOutlet weak var blueTextField: UITextField!
     @IBOutlet weak var saveBtn: UIButton!
-    @IBOutlet weak var errorLbl: UILabel!
+    @IBOutlet weak var opacitySlider: UISlider!
+    @IBOutlet weak var opacityTF: UITextField!
     
     var delegate: ColorViewControllerDelegate?
     var viewColor: UIColor!
@@ -31,6 +32,7 @@ class ColorViewController: UIViewController {
         switch sender {
         case redSlider: setValue(for: redTextField)
         case greenSlider: setValue(for: greenTextField)
+        case opacitySlider: setValue(for: opacityTF)
         default: setValue(for: blueTextField)
         }
         setColor()
@@ -44,12 +46,12 @@ class ColorViewController: UIViewController {
     private func setupUI() {
         preView.layer.cornerRadius = 20
         preView.backgroundColor = viewColor
-        errorLbl.isHidden = true
-        navigationItem.hidesBackButton = true
         redTextField.delegate = self
         greenTextField.delegate = self
         blueTextField.delegate = self
+        opacityTF.delegate = self
         setSliders()
-        setValue(for: redTextField, greenTextField, blueTextField)
+        setValue(for: redTextField, greenTextField,
+                 blueTextField, opacityTF)
     }
 }
