@@ -17,16 +17,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="homeWork_18" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kf5-Cb-2xs">
-                                <rect key="frame" x="63.333333333333343" y="413" width="266.66666666666663" height="51.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="53" y="363" width="287.33333333333337" height="51.333333333333314"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="43"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                         <constraints>
-                            <constraint firstItem="Kf5-Cb-2xs" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="H5S-xF-3ih"/>
+                            <constraint firstItem="Kf5-Cb-2xs" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-50" id="H5S-xF-3ih"/>
                             <constraint firstItem="Kf5-Cb-2xs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Jzt-b9-Qn2"/>
                         </constraints>
                     </view>

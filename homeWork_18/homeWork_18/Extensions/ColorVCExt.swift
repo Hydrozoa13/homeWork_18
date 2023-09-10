@@ -10,7 +10,7 @@ import UIKit
 extension ColorViewController: UITextFieldDelegate  {
     
     func setColor() {
-        RGBView.backgroundColor = UIColor(
+        preView.backgroundColor = UIColor(
             red: CGFloat(redSlider.value / 255.0),
             green: CGFloat(greenSlider.value / 255.0),
             blue: CGFloat(blueSlider.value / 255.0),
@@ -29,6 +29,8 @@ extension ColorViewController: UITextFieldDelegate  {
                 blueTextField.text = String(Int(blueSlider.value))
             }
         }
+       errorLbl.isHidden = true
+       saveBtn.isEnabled = true
     }
     
     func setSliders() {
@@ -47,18 +49,21 @@ extension ColorViewController {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let text = textField.text else { return }
-        if let currentValue = Float(text) {
+        guard let text = textField.text,
+              let currentValue = Float(text)
+        else { return }
+        if currentValue >= 0, currentValue <= 255 {
             switch textField {
-            case redTextField:
-                redSlider.setValue(currentValue, animated: true)
-            case greenTextField:
-                greenSlider.setValue(currentValue, animated: true)
-            default:
-                blueSlider.setValue(currentValue, animated: true)
+            case redTextField: redSlider.setValue(currentValue, animated: true)
+            case greenTextField: greenSlider.setValue(currentValue, animated: true)
+            default: blueSlider.setValue(currentValue, animated: true)
             }
-        setColor()
-        return
+            setColor()
+            errorLbl.isHidden = true
+            saveBtn.isEnabled = true
+        } else {
+            errorLbl.isHidden = false
+            saveBtn.isEnabled = false
         }
     }
 }

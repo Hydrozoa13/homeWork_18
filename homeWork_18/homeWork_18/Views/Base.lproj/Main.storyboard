@@ -17,10 +17,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDp-Zn-RwX">
-                                <rect key="frame" x="102" y="468" width="226" height="65"/>
+                                <rect key="frame" x="102" y="418" width="226" height="65"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="ChangeBG">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="43"/>
+                                    <color key="baseBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="changeBGAction" destination="vxJ-8Q-R3U" eventType="touchUpInside" id="sc9-ks-0b8"/>
@@ -30,7 +31,7 @@
                         <viewLayoutGuide key="safeArea" id="gco-El-8hW"/>
                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                         <constraints>
-                            <constraint firstItem="CDp-Zn-RwX" firstAttribute="centerY" secondItem="gco-El-8hW" secondAttribute="centerY" id="DS5-gD-pAD"/>
+                            <constraint firstItem="CDp-Zn-RwX" firstAttribute="centerY" secondItem="gco-El-8hW" secondAttribute="centerY" constant="-50" id="DS5-gD-pAD"/>
                             <constraint firstItem="CDp-Zn-RwX" firstAttribute="centerX" secondItem="gco-El-8hW" secondAttribute="centerX" id="r12-9b-zQ8"/>
                         </constraints>
                     </view>
@@ -53,6 +54,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="SaveBG">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="43"/>
+                                    <color key="baseBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="doneButtonTapped" destination="hv4-ZW-rXd" eventType="touchUpInside" id="Fea-4u-7Ce"/>
@@ -63,9 +65,22 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TtP-g5-RuD">
                                         <rect key="frame" x="0.0" y="0.0" width="380" height="65"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ERROR! Wrong color format: it should be from 0 to 255" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CuZ-gF-jAt">
+                                                <rect key="frame" x="10" y="10" width="360" height="45"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <size key="shadowOffset" width="-1" height="-1"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="CuZ-gF-jAt" firstAttribute="leading" secondItem="TtP-g5-RuD" secondAttribute="leading" constant="10" id="Nin-1I-1Jz"/>
+                                            <constraint firstItem="CuZ-gF-jAt" firstAttribute="top" secondItem="TtP-g5-RuD" secondAttribute="top" constant="10" id="OwB-2y-GnR"/>
+                                            <constraint firstAttribute="trailing" secondItem="CuZ-gF-jAt" secondAttribute="trailing" constant="10" id="fxR-PE-Mnt"/>
                                             <constraint firstAttribute="height" constant="65" id="ptn-zR-eMa"/>
+                                            <constraint firstAttribute="bottom" secondItem="CuZ-gF-jAt" secondAttribute="bottom" constant="10" id="qTr-m5-fYy"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ck0-sL-5P1">
@@ -73,8 +88,8 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CnG-Cu-0cQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="380" height="20.333333333333332"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="mpp-in-wjt">
@@ -82,6 +97,8 @@
                                                 <subviews>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="utX-Wp-lea">
                                                         <rect key="frame" x="-2" y="0.0" width="304" height="35"/>
+                                                        <color key="minimumTrackTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="thumbTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <connections>
                                                             <action selector="rgbSliderAction:" destination="hv4-ZW-rXd" eventType="valueChanged" id="Rdt-du-ntm"/>
                                                         </connections>
@@ -91,8 +108,9 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="65" id="NqT-kY-31c"/>
                                                         </constraints>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -103,8 +121,8 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GREEN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bau-OJ-gdJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="380" height="20.333333333333332"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="kId-vV-b3T">
@@ -112,6 +130,8 @@
                                                 <subviews>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="tZW-mb-mQ3">
                                                         <rect key="frame" x="-2" y="0.0" width="304" height="35"/>
+                                                        <color key="minimumTrackTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="thumbTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <connections>
                                                             <action selector="rgbSliderAction:" destination="hv4-ZW-rXd" eventType="valueChanged" id="0ep-Jb-DXw"/>
                                                         </connections>
@@ -121,8 +141,9 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="65" id="UK8-7E-WjA"/>
                                                         </constraints>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -133,8 +154,8 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BLUE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfv-uc-6rs">
                                                 <rect key="frame" x="0.0" y="0.0" width="380" height="20.333333333333332"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="bLm-kx-F2I">
@@ -142,6 +163,8 @@
                                                 <subviews>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="xuG-6R-MXc">
                                                         <rect key="frame" x="-2" y="0.0" width="304" height="35"/>
+                                                        <color key="minimumTrackTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="thumbTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <connections>
                                                             <action selector="rgbSliderAction:" destination="hv4-ZW-rXd" eventType="valueChanged" id="6uX-Yy-72V"/>
                                                         </connections>
@@ -149,10 +172,11 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lcz-zQ-Kyl">
                                                         <rect key="frame" x="315" y="0.0" width="65" height="34"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="65" id="C75-Ih-6LI"/>
+                                                            <constraint firstAttribute="width" constant="65" id="spp-A6-Yyh"/>
                                                         </constraints>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -173,13 +197,15 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="RGBView" destination="TtP-g5-RuD" id="60f-Gu-L6L"/>
                         <outlet property="blueSlider" destination="xuG-6R-MXc" id="23B-Gz-Nn7"/>
                         <outlet property="blueTextField" destination="lcz-zQ-Kyl" id="l2R-vU-q6q"/>
+                        <outlet property="errorLbl" destination="CuZ-gF-jAt" id="Paq-h1-rRC"/>
                         <outlet property="greenSlider" destination="tZW-mb-mQ3" id="dID-42-fXu"/>
                         <outlet property="greenTextField" destination="cPY-JI-5Gn" id="ClS-z6-JJh"/>
+                        <outlet property="preView" destination="TtP-g5-RuD" id="D7U-XO-hNz"/>
                         <outlet property="redSlider" destination="utX-Wp-lea" id="afN-ee-WHr"/>
                         <outlet property="redTextField" destination="Ca4-YZ-lET" id="2G3-3g-6Ms"/>
+                        <outlet property="saveBtn" destination="GRb-We-OZ1" id="XV9-il-AtV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xSM-Qi-Rah" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
