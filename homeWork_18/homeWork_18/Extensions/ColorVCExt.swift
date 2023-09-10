@@ -27,6 +27,8 @@ extension ColorViewController: UITextFieldDelegate  {
                 greenTextField.text = String(Int(greenSlider.value))
             case opacityTF:
                 opacityTF.text = String(Int(opacitySlider.value))
+            case hexColorTF:
+                hexColorTF.text = viewColor.toHexString()
             default:
                 blueTextField.text = String(Int(blueSlider.value))
             }
@@ -60,6 +62,7 @@ extension ColorViewController {
         default: blueSlider.setValue(currentValue, animated: true)
         }
         setColor()
+        hexColorTF.text = preView.backgroundColor?.toHexString()
     }
 }
 

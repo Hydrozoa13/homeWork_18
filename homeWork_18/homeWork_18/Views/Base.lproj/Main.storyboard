@@ -65,7 +65,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TtP-g5-RuD">
                                         <rect key="frame" x="0.0" y="0.0" width="380" height="100"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="ptn-zR-eMa"/>
                                         </constraints>
@@ -241,6 +241,7 @@
                         <outlet property="blueTextField" destination="lcz-zQ-Kyl" id="l2R-vU-q6q"/>
                         <outlet property="greenSlider" destination="tZW-mb-mQ3" id="dID-42-fXu"/>
                         <outlet property="greenTextField" destination="cPY-JI-5Gn" id="ClS-z6-JJh"/>
+                        <outlet property="hexColorTF" destination="xbm-t5-Ur7" id="7Td-Ce-tPs"/>
                         <outlet property="opacitySlider" destination="yne-eJ-8pc" id="nfd-eE-6Rs"/>
                         <outlet property="opacityTF" destination="O0C-JF-3Hi" id="eBw-dO-KXy"/>
                         <outlet property="preView" destination="TtP-g5-RuD" id="D7U-XO-hNz"/>
@@ -273,8 +274,8 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

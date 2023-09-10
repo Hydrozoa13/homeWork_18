@@ -19,6 +19,7 @@ class ColorViewController: UIViewController {
     @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var opacitySlider: UISlider!
     @IBOutlet weak var opacityTF: UITextField!
+    @IBOutlet weak var hexColorTF: UITextField!
     
     var delegate: ColorViewControllerDelegate?
     var viewColor: UIColor!
@@ -36,6 +37,7 @@ class ColorViewController: UIViewController {
         default: setValue(for: blueTextField)
         }
         setColor()
+        hexColorTF.text = preView.backgroundColor?.toHexString()
     }
     
     @IBAction func doneButtonTapped() {
@@ -50,8 +52,9 @@ class ColorViewController: UIViewController {
         greenTextField.delegate = self
         blueTextField.delegate = self
         opacityTF.delegate = self
+        hexColorTF.delegate = self
         setSliders()
         setValue(for: redTextField, greenTextField,
-                 blueTextField, opacityTF)
+                 blueTextField, opacityTF, hexColorTF)
     }
 }
