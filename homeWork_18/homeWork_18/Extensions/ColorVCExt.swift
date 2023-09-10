@@ -18,6 +18,10 @@ extension ColorViewController: UITextFieldDelegate  {
         )
     }
     
+    func hexToRGB() {
+        preView.backgroundColor = UIColor(hex: hexColorTF.text ?? "000000")
+    }
+    
    func setValue(for textFields: UITextField...) {
         textFields.forEach { textField in
             switch textField {

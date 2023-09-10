@@ -19,28 +19,19 @@ extension UIColor {
     }
 
     convenience init(red: Int, green: Int, blue: Int) {
-//            assert(red >= 0 && red <= 255, "Invalid red component")
-//            assert(green >= 0 && green <= 255, "Invalid green component")
-//            assert(blue >= 0 && blue <= 255, "Invalid blue component")
-
             self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
-        }
-}
+    }
+    convenience init?(hex: String) {
+        let hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
+        var rgb: UInt64 = 0
+        var red: CGFloat = 0.0
+        var green: CGFloat = 0.0
+        var blue: CGFloat = 0.0
 
-//extension UITextField {
-//    func hexStringToRGB(_ hexString: String) -> (red: CGFloat, green: CGFloat, blue: CGFloat) {
-//        let cString: String = hexString.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
-//
-//        if ((cString.count) != 6) {
-//            return (red: 0.0, green: 0.0, blue: 0.0)
-//        }
-//
-//        var rgbValue: UInt32 = 0
-//        Scanner(string: cString).scanHexInt32(&rgbValue)
-//
-//        return (
-//            red: CGFloat((rgbValue & 0xFF0000) >> 16),
-//            green: CGFloat((rgbValue & 0x00FF00) >> 8),
-//            blue: CGFloat(rgbValue & 0x0000FF))
-//    }
-//}
+        guard Scanner(string: hexSanitized).scanHexInt64(&rgb) else { return nil }
+                red = CGFloat((rgb & 0xFF0000) >> 16)
+                green = CGFloat((rgb & 0x00FF00) >> 8)
+                blue = CGFloat(rgb & 0x0000FF)
+        self.init(red: Int(red), green: Int(green), blue: Int(blue))
+    }
+}

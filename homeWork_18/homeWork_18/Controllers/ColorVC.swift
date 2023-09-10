@@ -40,6 +40,10 @@ class ColorViewController: UIViewController {
         hexColorTF.text = preView.backgroundColor?.toHexString()
     }
     
+    @IBAction func hexTFAction(_ sender: UITextField) {
+        hexToRGB()
+    }
+  
     @IBAction func doneButtonTapped() {
         delegate?.setColor(preView.backgroundColor ?? .white)
         navigationController?.popViewController(animated: true)

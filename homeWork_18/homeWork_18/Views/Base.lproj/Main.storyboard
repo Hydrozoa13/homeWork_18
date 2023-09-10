@@ -186,6 +186,9 @@
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <connections>
+                                                    <action selector="hexTFAction:" destination="hv4-ZW-rXd" eventType="editingDidEnd" id="a9k-ch-5Ag"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
