@@ -80,7 +80,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="mpp-in-wjt">
                                                 <rect key="frame" x="0.0" y="25.333333333333314" width="380" height="34"/>
                                                 <subviews>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="utX-Wp-lea">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="utX-Wp-lea">
                                                         <rect key="frame" x="-2" y="0.0" width="304" height="35"/>
                                                         <connections>
                                                             <action selector="rgbSliderAction:" destination="hv4-ZW-rXd" eventType="valueChanged" id="Rdt-du-ntm"/>
@@ -110,7 +110,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="kId-vV-b3T">
                                                 <rect key="frame" x="0.0" y="25.333333333333371" width="380" height="34"/>
                                                 <subviews>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tZW-mb-mQ3">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="tZW-mb-mQ3">
                                                         <rect key="frame" x="-2" y="0.0" width="304" height="35"/>
                                                         <connections>
                                                             <action selector="rgbSliderAction:" destination="hv4-ZW-rXd" eventType="valueChanged" id="0ep-Jb-DXw"/>
@@ -140,7 +140,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="bLm-kx-F2I">
                                                 <rect key="frame" x="0.0" y="25.333333333333314" width="380" height="34"/>
                                                 <subviews>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xuG-6R-MXc">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="xuG-6R-MXc">
                                                         <rect key="frame" x="-2" y="0.0" width="304" height="35"/>
                                                         <connections>
                                                             <action selector="rgbSliderAction:" destination="hv4-ZW-rXd" eventType="valueChanged" id="6uX-Yy-72V"/>

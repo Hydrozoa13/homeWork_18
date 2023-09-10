@@ -12,8 +12,8 @@ class MainViewController: UIViewController {
     @IBAction func changeBGAction() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "ColorViewController") as? ColorViewController else {return}
-        navigationController?.pushViewController(vc, animated: true)
-        vc.delegate = self
         vc.viewColor = view.backgroundColor
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

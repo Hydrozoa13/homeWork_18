@@ -17,7 +17,7 @@ class ColorViewController: UIViewController {
     @IBOutlet var greenTextField: UITextField!
     @IBOutlet var blueTextField: UITextField!
     
-    var delegate: ColorViewControllerDelegate!
+    var delegate: ColorViewControllerDelegate?
     var viewColor: UIColor!
     
     override func viewDidLoad() {
@@ -43,7 +43,7 @@ class ColorViewController: UIViewController {
     }
     
     @IBAction func doneButtonTapped() {
-        delegate.setColor(RGBView.backgroundColor ?? .white)
+        delegate?.setColor(RGBView.backgroundColor ?? .white)
         navigationController?.popViewController(animated: true)
     }
 }

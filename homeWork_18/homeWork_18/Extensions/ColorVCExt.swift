@@ -11,9 +11,9 @@ extension ColorViewController: UITextFieldDelegate  {
     
     func setColor() {
         RGBView.backgroundColor = UIColor(
-            red: CGFloat(redSlider.value),
-            green: CGFloat(greenSlider.value),
-            blue: CGFloat(blueSlider.value),
+            red: CGFloat(redSlider.value / 255.0),
+            green: CGFloat(greenSlider.value / 255.0),
+            blue: CGFloat(blueSlider.value / 255.0),
             alpha: 1
         )
     }
@@ -22,24 +22,20 @@ extension ColorViewController: UITextFieldDelegate  {
         textFields.forEach { textField in
             switch textField {
             case redTextField:
-                redTextField.text = string(from: redSlider)
+                redTextField.text = String(Int(redSlider.value))
             case greenTextField:
-                greenTextField.text = string(from: greenSlider)
+                greenTextField.text = String(Int(greenSlider.value))
             default:
-                blueTextField.text = string(from: blueSlider)
+                blueTextField.text = String(Int(blueSlider.value))
             }
         }
     }
     
     func setSliders() {
         let ciColor = CIColor(color: viewColor)
-        redSlider.value = Float(ciColor.red)
-        greenSlider.value = Float(ciColor.green)
-        blueSlider.value = Float(ciColor.blue)
-    }
-    
-    private func string(from slider: UISlider) -> String {
-        String(format: "%.2f", slider.value)
+        redSlider.value = Float(ciColor.red * 255.0)
+        greenSlider.value = Float(ciColor.green * 255.0)
+        blueSlider.value = Float(ciColor.blue * 255.0)
     }
 }
 
