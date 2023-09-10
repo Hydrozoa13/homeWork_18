@@ -40,7 +40,7 @@ extension ColorViewController: UITextFieldDelegate  {
     }
     
     func setSliders() {
-        let ciColor = CIColor(color: viewColor)
+        let ciColor = CIColor(color: preView.backgroundColor ?? .black)
         redSlider.value = Float(ciColor.red * 255)
         greenSlider.value = Float(ciColor.green * 255)
         blueSlider.value = Float(ciColor.blue * 255)

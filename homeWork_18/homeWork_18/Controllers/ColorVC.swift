@@ -42,6 +42,9 @@ class ColorViewController: UIViewController {
     
     @IBAction func hexTFAction(_ sender: UITextField) {
         hexToRGB()
+        setSliders()
+        setValue(for: redTextField, greenTextField,
+                 blueTextField, opacityTF)
     }
   
     @IBAction func doneButtonTapped() {
