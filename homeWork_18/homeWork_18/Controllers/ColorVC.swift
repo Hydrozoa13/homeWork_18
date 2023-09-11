@@ -9,6 +9,7 @@ import UIKit
 
 class ColorViewController: UIViewController {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var preView: UIView!
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
@@ -27,6 +28,8 @@ class ColorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        hideKeyboardWhenTappedAround()
+        startKeyboardObserver()
     }
 
     @IBAction func rgbSliderAction(_ sender: UISlider) {

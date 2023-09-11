@@ -50,9 +50,15 @@ extension ColorViewController: UITextFieldDelegate  {
 
 extension ColorViewController {
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        view.endEditing(true)
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ColorViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+     func startKeyboardObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -66,7 +72,23 @@ extension ColorViewController {
         default: blueSlider.setValue(currentValue, animated: true)
         }
         setColor()
-        hexColorTF.text = preView.backgroundColor?.toHexString()
+        hexColorTF.text = preView.backgroundColor?.toHexString()    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    @objc private func keyboardWillShow(notification: Notification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+    }
+    
+    @objc private func keyboardWillHide() {
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
     }
 }
 
