@@ -23,6 +23,7 @@ class ColorViewController: UIViewController {
     
     var delegate: ColorViewControllerDelegate?
     var viewColor: UIColor!
+    var completionHandler: ((UIColor) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,9 +47,15 @@ class ColorViewController: UIViewController {
         setValue(for: redTextField, greenTextField,
                  blueTextField, opacityTF)
     }
-  
-    @IBAction func doneButtonTapped() {
+   
+    @IBAction func saveWithDelegateBtnAction() {
         delegate?.setColor(preView.backgroundColor ?? .white)
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func saveWithClosureBtnAction(_ sender: UIButton) {
+        let updatedBG = preView.backgroundColor
+        completionHandler?(updatedBG ?? .black)
         navigationController?.popViewController(animated: true)
     }
     
