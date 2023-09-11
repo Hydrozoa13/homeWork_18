@@ -16,7 +16,6 @@ class ColorViewController: UIViewController {
     @IBOutlet weak var redTextField: UITextField!
     @IBOutlet weak var greenTextField: UITextField!
     @IBOutlet weak var blueTextField: UITextField!
-    @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var opacitySlider: UISlider!
     @IBOutlet weak var opacityTF: UITextField!
     @IBOutlet weak var hexColorTF: UITextField!
@@ -60,6 +59,8 @@ class ColorViewController: UIViewController {
     }
     
     private func setupUI() {
+        navigationItem.title = "ChangeBG"
+        navigationItem.hidesBackButton = true
         preView.layer.cornerRadius = 20
         preView.backgroundColor = viewColor
         redTextField.delegate = self
